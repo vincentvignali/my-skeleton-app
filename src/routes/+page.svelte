@@ -49,7 +49,5 @@
 				{counter}
 			</div>
 			<a href="/trees" class="w-full"><button class="my-0 mx-auto block w-1/2 mt-5 rounded bg-green-400 p-3 text-2xl border-green-500 border-4"> Voir la liste des arbres</button></a>
-			<p><b>Exemple d'une table : </b></p>
-			<Table source={tableSimple}></Table>
 		</div>
 	</div>
