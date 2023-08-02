@@ -4,11 +4,32 @@
 <script lang='ts'>
 	import { Table, tableMapperValues } from '@skeletonlabs/skeleton';
 	import type { TableSource } from '@skeletonlabs/skeleton';
-	
-	
-	const myTree = { name : 'Pommier', season : 'Automn'}
+	import { trees as treesData } from './data';
 
+
+	const trees = treesData.map((tree) => {
+		return {
+			...tree,
+			href : `<a href=/trees/${tree.slug}> <b class='bg-green-600 p-1 rounded'>see more </b><a/>`
+		}
+	})
+
+	const treeTable: TableSource = {
+	head: ['Name', 'averageSize', 'seasonToCollect', 'seasonToPlant', 'SeeMore'],
+	body: tableMapperValues(trees, ['name', 'averageSize', 'seasonToCollect', 'seasonToPlant', 'href']),
+	meta: tableMapperValues(trees, ['position', 'name', 'averageSize', 'seasonToCollect', 'seasonToPlant']),
+	foot: ['Total', '', '<code class="code">5</code>']
+	}
 </script>
 
-<h1>{myTree.name}</h1>
-<p>{myTree.season}</p>
+<div class=" mx-auto mt-10 w-3/4">
+	<a href="/">
+        <button class="bg-red-200 p-1 rounded text-red-700 my-2">
+        Retour à l'acceuil
+        </button>
+    </a>
+	<div class="rounded border border-red">
+
+		<Table source={treeTable}></Table>
+	</div>
+	</div>

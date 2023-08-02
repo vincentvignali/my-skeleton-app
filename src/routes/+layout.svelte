@@ -6,10 +6,9 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 </script>
-<div class='text-center text-xl bg-red-300 h-10'>
-Header
+<div class='text-center text-xl bg-green-500'>
+	<h1 class="text-5xl">
+		The farm
+	</h1>
 </div>
 <slot />
-<div class='text-center text-xl bg-red-300 h-10'>
-Footer
-</div>

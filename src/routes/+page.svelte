@@ -31,23 +31,25 @@
 </script>
 	<div class="container h-full mx-auto flex justify-center items-center">
 		<div class="space-y-5">
-			<h1 class="h1">Let's get cracking bones!</h1>
-			<p>Start by exploring:</p>
+			<h1 class="h1">Prototype!</h1>
+			<p><b>Fonctionnalités : </b></p>
 			<ul>
-				<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout, the CSS import order is critical!</li>
-				<li><code class="code">/src/app.postcss</code> - minimal css to make the page full screen, may not be relevant for your project</li>
-				<li><code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents</li>
+				<li><code class="code">Page d'une liste d'arbre</code>
+				<li><code class="code">Page d'un arbre</code>
+				<li><code class="code">Utilisation de tableau et de lien dans l'application</code>
 			</ul>
+			<p><b>Interactivité : </b></p>
+			<code class="code">Jouer avec le conteur ci dessous ! Entrer directement un chiffre ou bien cliquer sur les boutons. </code>
 			<div class="flex w-full gap-5">
-
-				<button class="flex-grow rounded bg-red-500 p-2" on:click={increase}>Increase</button>
+				<button class="flex-grow rounded bg-red-500 p-2" on:click={increase}>Augmenter</button>
 				<input class='text-center text-red-500 rounded-3xl' bind:value={counter}/>
-				<button class="flex-grow rounded bg-red-500 p-2" on:click={decrease}>Increase</button>
+				<button class="flex-grow rounded bg-red-500 p-2" on:click={decrease}>Réduire</button>
 			</div>
 			<div class="text-center border-red-500 border-2 rounded" >
 				{counter}
 			</div>
-			<a href="/trees" class="w-full"><button class="my-0 mx-auto block w-1/2 mt-5 rounded bg-red-500 p-2"> See trees </button></a>
+			<a href="/trees" class="w-full"><button class="my-0 mx-auto block w-1/2 mt-5 rounded bg-green-400 p-3 text-2xl border-green-500 border-4"> Voir la liste des arbres</button></a>
+			<p><b>Exemple d'une table : </b></p>
 			<Table source={tableSimple}></Table>
 		</div>
 	</div>
