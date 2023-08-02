@@ -4,9 +4,13 @@
 <script lang='ts'>
 	import { Table, tableMapperValues } from '@skeletonlabs/skeleton';
 	import type { TableSource } from '@skeletonlabs/skeleton';
+	import Layout from './+layout.svelte';
 	let counter = 0 
 	const increase = () => {
 		counter ++
+	}
+	const decrease = () => {
+		counter --
 	}
 
 	const sourceData  = [
@@ -25,21 +29,25 @@
 };
 
 </script>
+	<div class="container h-full mx-auto flex justify-center items-center">
+		<div class="space-y-5">
+			<h1 class="h1">Let's get cracking bones!</h1>
+			<p>Start by exploring:</p>
+			<ul>
+				<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout, the CSS import order is critical!</li>
+				<li><code class="code">/src/app.postcss</code> - minimal css to make the page full screen, may not be relevant for your project</li>
+				<li><code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents</li>
+			</ul>
+			<div class="flex w-full gap-5">
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5">
-		<h1 class="h1">Let's get cracking bones!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout, the CSS import order is critical!</li>
-			<li><code class="code">/src/app.postcss</code> - minimal css to make the page full screen, may not be relevant for your project</li>
-			<li><code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents</li>
-		</ul>
-		<button class="rounded bg-red-500 p-2" on:click={increase}>Increase</button>
-		<input bind:value={counter} />
-		<div>
-			{counter}
+				<button class="flex-grow rounded bg-red-500 p-2" on:click={increase}>Increase</button>
+				<input class='text-center text-red-500 rounded-3xl' bind:value={counter}/>
+				<button class="flex-grow rounded bg-red-500 p-2" on:click={decrease}>Increase</button>
+			</div>
+			<div class="text-center border-red-500 border-2 rounded" >
+				{counter}
+			</div>
+			<a href="/trees" class="w-full"><button class="my-0 mx-auto block w-1/2 mt-5 rounded bg-red-500 p-2"> See trees </button></a>
+			<Table source={tableSimple}></Table>
 		</div>
-		<Table source={tableSimple}></Table>
 	</div>
-</div>
