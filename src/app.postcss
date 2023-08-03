@@ -1,5 +1,19 @@
 /*place global styles here */
-html,
-body {
-	@apply h-full;
+@font-face {
+	/* Reference name */
+	font-family: 'Schoolbell';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/Schoolbell-Regular.ttf');
 }
+
+html, body { @apply h-full dark:bg-primary-500 }
+body {
+	background-color:red;
+	background-image: url('/background.svg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+		
+
