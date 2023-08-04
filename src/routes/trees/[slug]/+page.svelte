@@ -1,7 +1,6 @@
 <script lang='ts'>
 export let data
 import { IconTrees } from '@tabler/icons-svelte';
-console.log('tree page has received',data)
 </script>
 
 <div>

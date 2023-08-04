@@ -11,7 +11,6 @@
 	onMount(() => {
 		getAllRecords().then((res) => items = res).then(() => {
 			collectionSubscribe('trees', (data) => {
-				console.log(data)
 				getAllRecords().then((res) => items = res) })
 		})
 	})
