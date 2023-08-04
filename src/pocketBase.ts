@@ -10,8 +10,13 @@ export const createRecord = async () => {
 		name: 'Fake tree created'
 	});
 };
+
 export const getAllRecords = async () => {
 	return await pb.collection('trees').getFullList();
+};
+
+export const getRecordUrlPic = (record: Record, firstFilename: string) => {
+	return pb.files.getUrl(record, firstFilename);
 };
 
 export const collectionSubscribe = (

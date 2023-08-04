@@ -3,7 +3,6 @@
 <script lang="ts">
 	import BlobButton from './../lib/components/BlobButton.svelte';
 	import { onMount } from 'svelte';
-	import Svg1 from '../../static/blobs/blob-haikei.svg';
 	import { collectionSubscribe, createRecord, getAllRecords } from '../pocketBase';
 	
 	let items : any
@@ -16,7 +15,6 @@
 				getAllRecords().then((res) => items = res) })
 		})
 	})
-
 
 	</script>
 
@@ -48,7 +46,6 @@
 				<div class="flex justify-center items-center flex-wrap">
 
 					{#if items}
-					<!-- content here -->
 					{#each items as item}
 					<div class="text-center p-1 w-1/3 m-1 border-2 rounded variant-outline-secondary">
 						<div class="text-primary-500">Name: {item.name}</div>
