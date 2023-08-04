@@ -4,20 +4,20 @@
 	import BlobButton from './../lib/components/BlobButton.svelte';
 	import { onMount } from 'svelte';
 	import Svg1 from '../../static/blobs/blob-haikei.svg';
-	import { createRecord, getAllRecords } from '../pocketBase';
+	import { collectionSubscribe, createRecord, getAllRecords } from '../pocketBase';
 	
 	let items : any
-	const fetchItems = () => {
-		getAllRecords().then((res) => items = res)
-	}
 
-	const createAnItem = () => {
-		createRecord().then(() => fetchItems())
-	}
 
 	onMount(() => {
-		getAllRecords().then((res) => items = res)
+		getAllRecords().then((res) => items = res).then(() => {
+			collectionSubscribe('trees', (data) => {
+				console.log(data)
+				getAllRecords().then((res) => items = res) })
+		})
 	})
+
+
 	</script>
 
 
@@ -44,7 +44,7 @@
 			>
 			<div class="container variant-ghost-tertiary p-2 rounded mt-2">
 				<h2 class="text-3xl text-primary-500 m-2 text-center">Api Test</h2>
-				<button on:click={() => createAnItem()} class="my-2 mx-auto block btn variant-ghost-primary">Create a pocket record</button>
+				<button on:click={() => createRecord()} class="my-2 mx-auto block btn variant-ghost-primary">Create a pocket record</button>
 				<div class="flex justify-center items-center flex-wrap">
 
 					{#if items}
@@ -64,7 +64,7 @@
 			<div class="container variant-ghost-tertiary p-2 rounded mt-2">
 				<div class="flex justify-center items-center flex-col">
 					<h2 class="text-3xl text-primary-500 m-2">Blob Button expriment</h2>
-					<BlobButton svg={Svg1} position={'center'} />
+					<BlobButton />
 				</div>
 			</div>
 	</div>

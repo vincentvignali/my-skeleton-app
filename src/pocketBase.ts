@@ -1,4 +1,4 @@
-import PocketBase from 'pocketbase';
+import PocketBase, { Record, type RecordSubscription } from 'pocketbase';
 
 const url = 'https://pocket-piton.pockethost.io';
 
@@ -12,4 +12,11 @@ export const createRecord = async () => {
 };
 export const getAllRecords = async () => {
 	return await pb.collection('trees').getFullList();
+};
+
+export const collectionSubscribe = (
+	collection: string,
+	callback: (data: RecordSubscription<Record>) => void
+) => {
+	pb.collection(collection).subscribe('*', callback);
 };
