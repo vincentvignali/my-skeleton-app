@@ -6,6 +6,6 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 </script>
-<div class="bg-white h-full mx-auto w-11/12 flex flex-col justify-center">
+<div class="bg-white min-h-screen mx-auto w-11/12 flex flex-col justify-center">
 	<slot />
 </div>

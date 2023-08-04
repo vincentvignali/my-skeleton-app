@@ -24,7 +24,7 @@
 
 <div class=" mx-auto mt-10 w-3/4">
 	<a href="/">
-        <button class="bg-red-200 p-1 rounded text-red-700 my-2">
+        <button class="bg-red-200 p-1 rounded text-red-700 my-2 font-schoolBell">
         Retour à l'acceuil
         </button>
     </a>
