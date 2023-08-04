@@ -1,6 +1,4 @@
 <script lang="ts">
-	export let svg: string;
-	export let position: string = '';
 	$: svgStyle = 'bg-blob-1';
 	const primary = 'fill-primary-500';
 	const white = 'fill-white';
