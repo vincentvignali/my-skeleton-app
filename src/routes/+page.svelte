@@ -1,21 +1,18 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
-
 <script lang="ts">
 	import BlobButton from './../lib/components/BlobButton.svelte';
-	import { onMount } from 'svelte';
-	import { collectionSubscribe, createRecord, getAllRecords } from '../pocketBase';
+	import { onDestroy, onMount } from 'svelte';
 	
-	let items : any
-
-
+	export let data
+	let items = data.items
+	
 	onMount(() => {
-		getAllRecords().then((res) => items = res).then(() => {
-			collectionSubscribe('trees', (data) => {
-				getAllRecords().then((res) => items = res) })
-		})
+		console.log('Component mount')
 	})
 
-	</script>
+	onDestroy(() =>{
+		console.log('Component unmount')
+	})
+</script>
 
 
 <h1 class="h1 text-primary-500 text-center">Prototype du Piton</h1>
@@ -41,7 +38,12 @@
 			>
 			<div class="container variant-ghost-tertiary p-2 rounded mt-2">
 				<h2 class="text-3xl text-primary-500 m-2 text-center">Api Test</h2>
-				<button on:click={() => createRecord()} class="my-2 mx-auto block btn variant-ghost-primary">Create a pocket record</button>
+				<form 
+					action="?/create"
+					method="post"
+				>
+					<button type="submit" class="my-2 mx-auto block btn variant-ghost-primary">Create a pocket record</button>
+				</form>
 				<div class="flex justify-center items-center flex-wrap">
 
 					{#if items}
@@ -49,6 +51,10 @@
 					<div class="text-center p-1 w-1/3 m-1 border-2 rounded variant-outline-secondary">
 						<div class="text-primary-500">Name: {item.name}</div>
 						<div class="text-primary-500">ID: {item.id}</div>
+						<form action="?/delete" method="post">
+							<input type="hidden" name="id" value={item.id} />
+							<button class='btn bg-error-500'>delete</button>
+						</form>
 					</div>
 					{/each}
 					{:else}
