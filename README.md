@@ -10,7 +10,9 @@ cf pocketBase.ts
 PocketBase instance hosted on Pocket.io
 Pocket.Io dashboard : `https://pockethost.io/dashboard`
 PocketBase Dashboard : `https://pocket-piton.pockethost.io/_/#`
-## Deployment
+## Deployment deploy
+This tool can be used to manually sync Schmea between local and prod database
+`https://candid-daffodil-9a4d11.netlify.app/`
 The app is hosted on vercel : 
 `https://my-skeleton-app-vincentvignali.vercel.app/`
 
