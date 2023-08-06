@@ -1,112 +1,76 @@
-<script lang="ts">
-	import BlobButton from './../lib/components/BlobButton.svelte';
-	import { onDestroy, onMount } from 'svelte';
-
-	export let data;
-	let items = data.items;
-
-	onMount(() => {
-		console.log('Component mount');
-	});
-
-	onDestroy(() => {
-		console.log('Component unmount');
-	});
-</script>
-
-<h1 class="h1 text-primary-500 text-center">Prototype du Piton</h1>
 <div class="mx-auto flex justify-center items-center w-full">
-	<div class="p-2 w-fit">
-		<p class="font-light text-primary-500"><b>Fonctionnalités : </b></p>
+	<div class="pb-10 w-fit">
+		<div class="container mx-auto border-2 rounded-lg p-5 border-primary-500 mb-10">
+			<a href="/homepage" class="w-full"
+				><button class="my-0 mx-auto block btn variant-ghost-primary mt-3 text-lg font-bold w-full">
+					Voir page d'accueil</button
+				></a
+			>
+			<a href="/workshops" class="w-full"
+				><button class="my-0 mx-auto block btn variant-ghost-primary mt-3 text-lg font-bold w-full">
+					Voir la liste des ateliers</button
+				></a
+			>
+			<a href="/trees" class="w-full"
+				><button class="my-0 mx-auto block btn variant-ghost-primary mt-3 text-lg font-bold w-full">
+					Voir la liste des arbres</button
+				></a
+			>
+			<a href="/apiPlayground" class="w-full"
+				><button class="my-0 mx-auto block btn variant-ghost-primary mt-3 text-lg font-bold w-full">
+					Jouer avec l'api</button
+				></a
+			>
+		</div>
+		<p class="text-primary-500 text-center underline text-2xl font-schoolBell font-bold">
+			<b>Dev en cours : </b>
+		</p>
 		<ul>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Page d'une liste d'arbre
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Page d'un arbre
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Utilisation de tableau et l'application
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Connexion à une Api PocketBase
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Fetch depuis l'api : Get et Post
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-success p-3 text-lg">
 					Routing system
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-2">
-					Animated Blob Button
+				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-3 text-lg">
+					Blob Button HoverEffet
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-2">
-					Animated Starting point
+				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-3 text-lg">
+					Animation à l'arrivée sur la site : Cf Gsap & webGl
 				</p>
 			</li>
 			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-2">
-					Inversion des couleur sur hover d'un blob
-				</p>
-			</li>
-			<li>
-				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-2">
+				<p class="mt-2 code break-words whitespace-normal variant-outline-error p-3 text-lg">
 					Carrousel image photo
 				</p>
 			</li>
 		</ul>
-		<a href="/trees" class="w-full"
-			><button class="my-0 mx-auto block btn variant-ghost-primary mt-10">
-				Voir la liste des arbres</button
-			></a
-		>
-		<div class="container variant-ghost-tertiary p-2 rounded mt-2">
-			<div class="flex justify-center items-center flex-col">
-				<h2 class="text-3xl text-primary-500 m-2">Blob Button expriment</h2>
-				<div class="flex ">
-					<BlobButton />
-					<BlobButton />
-				</div>
-			</div>
-		</div>
-		<div class="container variant-ghost-tertiary p-2 rounded mt-2">
-			<h2 class="text-3xl text-primary-500 m-2 text-center">Api Test</h2>
-			<form action="?/create" method="post">
-				<button type="submit" class="my-2 mx-auto block btn variant-ghost-primary"
-					>Create a pocket record</button
-				>
-			</form>
-			<div class="flex justify-center items-center flex-wrap">
-				{#if items}
-					{#each items as item}
-						<div class="text-center p-1 w-1/3 m-1 border-2 rounded variant-outline-secondary">
-							<div class="text-primary-500">Name: {item.name}</div>
-							<div class="text-primary-500">ID: {item.id}</div>
-							<form action="?/delete" method="post">
-								<input type="hidden" name="id" value={item.id} />
-								<button class="btn bg-error-500">delete</button>
-							</form>
-						</div>
-					{/each}
-				{:else}
-					<div class="text-primary-500 p-2">loading</div>
-				{/if}
-			</div>
-		</div>
 	</div>
 </div>

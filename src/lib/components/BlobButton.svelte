@@ -4,20 +4,38 @@
 	import { onMount } from 'svelte';
 	$: c = console.log($backgroundReversed);
 	$: svgClass = 'scale-50';
-	$: outterAreaClass = 'fill-primary-500';
 	$: innerAreaClass = 'fill-white';
+	$: outterAreaClass = 'fill-primary-500';
 	$: textClass = 'fill-primary-500';
-	const toggleSwitchMode = () => {
-		modeUserPrefers.update((value) => !value);
-		const elemHtmlClassList = document.documentElement.classList;
-		$modeUserPrefers ? elemHtmlClassList.add('dark') : elemHtmlClassList.remove('dark');
+
+	const applyBase = () => {
+		svgClass = 'scale-[0.50]';
+		innerAreaClass = 'fill-white';
+		outterAreaClass = 'fill-primary-500';
+		textClass = 'fill-primary-500';
+		document.documentElement.classList.add('dark');
+		document.documentElement.children[1].setAttribute('style', '');
+	};
+	const applyReversed = () => {
+		svgClass = 'scale-[0.52]';
+		innerAreaClass = 'fill-primary-500';
+		outterAreaClass = 'fill-white';
+		textClass = 'fill-white text-3xl font-bold';
+		document.documentElement.classList.remove('dark');
+		document.documentElement.children[1].setAttribute(
+			'style',
+			"background-image : url('/backgrounds/background-reversed.svg')"
+		);
 	};
 </script>
 
-<LightSwitch bgDark="bg-red-500" bgLight="bg-green-500" fillLight="fill-slate-600" />
-<div class="w-12-h-12 bg-red-500">TestingDiv</div>
-
 <svg
+	on:mouseenter={(e) => {
+		applyReversed();
+	}}
+	on:mouseleave={(e) => {
+		applyBase();
+	}}
 	class={svgClass}
 	id="main"
 	version="1.1"
@@ -46,30 +64,6 @@
 		transform="translate(12.5 121.25) rotate(0 78.75000000000011 -60.71428571428578)"
 		stroke="none"
 		class="cursor-pointer"
-		on:click={() => console.log('cliked')}
-		on:keypress={() => console.log('keyPressed')}
-		on:mouseover={(e) => {
-			if (e.target?.id === 'outterArea') {
-				console.log('mouseEnter', e);
-				if (e.relatedTarget?.id === 'main') {
-					console.log('going in');
-					svgClass = 'scale-[0.52]';
-					innerAreaClass = 'fill-primary-500';
-					outterAreaClass = 'fill-white';
-					textClass = 'fill-white text-3xl font-bold';
-					toggleSwitchMode()
-				}
-				if (e.relatedTarget?.id === 'innerArea') {
-					svgClass = 'scale-50';
-					innerAreaClass = 'fill-white';
-					outterAreaClass = 'fill-primary-500';
-					textClass = 'fill-primary-500';
-					console.log('going out');
-					toggleSwitchMode()
-				}
-			}
-		}}
-		on:focus={() => console.log('focus')}
 		><path
 			id="innerArea"
 			class={innerAreaClass}
@@ -100,25 +94,10 @@
 </svg>
 
 <style lang="scss">
-	svg {
-		transition: all 315ms;
-	}
 	path#outterArea {
-		@apply transition-all duration-[315ms];
-	}
-	path#outterArea {
-		@apply transition-all duration-[315ms];
+		@apply transition-all duration-[415ms];
 	}
 	text {
-		@apply transition-all duration-[315ms];
+		@apply transition-all duration-[415ms];
 	}
-	// svg:hover {
-	// 	scale: 0.55;
-	// 	& path#innerArea {
-	// 		fill: white;
-	// 	}
-	// 	& text {
-	// 		@apply fill-primary-500;
-	// 	}
-	// }
 </style>
