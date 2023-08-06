@@ -1,11 +1,21 @@
 <script lang="ts">
+	import { LightSwitch, modeUserPrefers } from '@skeletonlabs/skeleton';
 	import { backgroundReversed } from '$lib/stores/backgroundStore';
-
+	import { onMount } from 'svelte';
+	$: c = console.log($backgroundReversed);
 	$: svgClass = 'scale-50';
 	$: outterAreaClass = 'fill-primary-500';
 	$: innerAreaClass = 'fill-white';
 	$: textClass = 'fill-primary-500';
+	const toggleSwitchMode = () => {
+		modeUserPrefers.update((value) => !value);
+		const elemHtmlClassList = document.documentElement.classList;
+		$modeUserPrefers ? elemHtmlClassList.add('dark') : elemHtmlClassList.remove('dark');
+	};
 </script>
+
+<LightSwitch bgDark="bg-red-500" bgLight="bg-green-500" fillLight="fill-slate-600" />
+<div class="w-12-h-12 bg-red-500">TestingDiv</div>
 
 <svg
 	class={svgClass}
@@ -47,7 +57,7 @@
 					innerAreaClass = 'fill-primary-500';
 					outterAreaClass = 'fill-white';
 					textClass = 'fill-white text-3xl font-bold';
-					backgroundReversed.set(true);
+					toggleSwitchMode()
 				}
 				if (e.relatedTarget?.id === 'innerArea') {
 					svgClass = 'scale-50';
@@ -55,7 +65,7 @@
 					outterAreaClass = 'fill-primary-500';
 					textClass = 'fill-primary-500';
 					console.log('going out');
-					backgroundReversed.set(false);
+					toggleSwitchMode()
 				}
 			}
 		}}
