@@ -5,9 +5,7 @@
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { Body } from 'svelte-body';
-	import { backgroundReversed } from '$lib/stores/backgroundStore';
-	import { AppShell, LightSwitch } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 </script>
 
 <AppShell>

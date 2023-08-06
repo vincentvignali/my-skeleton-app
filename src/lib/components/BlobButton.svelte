@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { classList } from 'svelte-body';
 	import { backgroundReversed } from '$lib/stores/backgroundStore';
-	import { setModeCurrent } from '@skeletonlabs/skeleton';
 
 	$: svgClass = 'scale-50';
 	$: outterAreaClass = 'fill-primary-500';
