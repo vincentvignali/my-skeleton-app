@@ -1,7 +1,9 @@
 {
-	"prettier.documentSelectors": [
-		"**/*.svelte"
-	],
+	"json.schemaDownload.enable": true,
+	"css.customData": [".vscode/tailwind.json"],
+	"css.lint.unknownAtRules": "ignore",
+	"scss.lint.unknownAtRules": "ignore",
+	"prettier.documentSelectors": ["**/*.svelte"],
 	"tailwindCSS.classAttributes": [
 		"class",
 		"accent",
