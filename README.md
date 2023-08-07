@@ -5,6 +5,13 @@ Stack :
 - Skeleton as UI Library.
 - PocketBase as a BackEnd
 
+## Projet Development
+Once you have installed your pocketBase along with this repo, run the following :
+
+`make -s appStart`
+
+It will start both svelte server and pocketBase for you.
+Find the local urls in the terminal tabs the previous command just opened.
 ## Backend service
 cf pocketBase.ts
 PocketBase instance hosted on Pocket.io
@@ -17,3 +24,4 @@ The app is hosted on vercel :
 `https://my-skeleton-app-vincentvignali.vercel.app/`
 
 Push a commit on master to trigger the continuous deployment.
+
