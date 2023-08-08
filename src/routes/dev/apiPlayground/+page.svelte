@@ -13,11 +13,6 @@
 	});
 </script>
 
-<a href="/" class="container ml-10">
-	<button class="bg-red-200 p-1 rounded text-red-700 my-2 ">
-	Retour
-	</button>
-</a>
 <div class="container mx-auto variant-ghost-tertiary p-2 rounded mt-2">
 	<h2 class="text-3xl text-primary-500 m-2 text-center">Api Test</h2>
 	<form action="?/create" method="post">

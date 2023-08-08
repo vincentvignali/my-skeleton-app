@@ -1,8 +1,4 @@
 <script lang="ts">
-	import { LightSwitch, modeUserPrefers } from '@skeletonlabs/skeleton';
-	import { backgroundReversed } from '$lib/stores/backgroundStore';
-	import { onMount } from 'svelte';
-	$: c = console.log($backgroundReversed);
 	$: svgClass = 'scale-50';
 	$: innerAreaClass = 'fill-white';
 	$: outterAreaClass = 'fill-primary-500';
