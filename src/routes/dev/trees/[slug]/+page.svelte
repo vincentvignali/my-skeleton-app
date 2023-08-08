@@ -10,7 +10,7 @@ import { IconTrees } from '@tabler/icons-svelte';
             {data.tree.name}
         </h2>
     </div>
-<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Taille moyenne :</span> {data.averageSize} mètres</p>
-<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Se collecte à la saison suivant :</span> {data.seasonToCollect}</p>
-<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Se plante à la saison suivant :</span> {data.seasonToPlant}</p>
+<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Taille moyenne :</span> {data.tree.id} mètres</p>
+<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Se collecte à la saison suivant :</span> {data.tree.name}</p>
+<p class="text-primary-500 mt-3 "><span class="rounded p-1 bg-green-100 text-green-700">Se plante à la saison suivant :</span> {data.tree.collectionId}</p>
 </div>
