@@ -5,7 +5,7 @@
 <div class="mx-auto flex justify-center items-center w-full">
 	<div class="pb-10 w-fit">
 		<div class="container mx-auto border-2 rounded-lg p-5 border-primary-500 mb-10">
-			<a href="{$page.url.pathname}{$page.url.pathname}/homepage" class="w-full"
+			<a href="{$page.url.pathname}/homepage" class="w-full"
 				><button class="my-0 mx-auto block btn variant-ghost-primary mt-3 text-lg font-bold w-full">
 					Voir page d'accueil</button
 				></a
