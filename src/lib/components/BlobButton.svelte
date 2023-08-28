@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { currentTextHelper } from '$lib/stores/textHelper';
-	import { writable } from 'svelte/store';
 
 	export let buttonText: string;
 	export let textHelper: string;
 	export let buttonUrl: string;
+	export let icon: string;
 	$: svgClass = '';
 	$: innerAreaClass = 'fill-primary-500';
 	$: outterAreaClass = 'fill-white';
@@ -25,7 +25,8 @@
 		currentTextHelper.update(() => {
 			return {
 				active: true,
-				content: textHelper
+				content: textHelper,
+				icon
 			};
 		});
 		innerAreaClass = 'fill-white';
@@ -40,7 +41,7 @@
 	};
 </script>
 
-<a
+<a class="w-44 md:w-full"
 	on:click={() => {
 		applyBase();
 	}}
@@ -59,7 +60,6 @@
 		viewBox="0 0 182.50000000000023 121.07142857142844"
 		width="100%"
 		height="auto">
-		<!-- svg-source:excalidraw -->
 
 		<defs>
 			<style class="style-fonts">

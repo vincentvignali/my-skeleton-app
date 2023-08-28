@@ -13,7 +13,7 @@
 		<div class="grid grid-cols-3 gap-16">
 			<BlobButton buttonText='Collaboration'/>
 			<BlobButton buttonText='Le Piton !' />
-			<BlobButton  buttonText='Contact' />
+			<BlobButton buttonText='Contact' />
 		</div>
 	</div>
 </div>
