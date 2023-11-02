@@ -14,5 +14,7 @@
 </script>
 
 
+<div class="h-screen p-2">
 
-<slot><!-- optional fallback --></slot>
+	<slot><!-- optional fallback --></slot>
+</div>
