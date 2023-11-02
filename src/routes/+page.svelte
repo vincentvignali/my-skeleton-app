@@ -46,14 +46,14 @@ class="font-schoolBell text-md  text-white"
 </div>
 {#each catalogues as catalogue}
 		<a
-			class="mx-auto btn text-primary-500 bg-primary-50 rounded-xl text-sm font-schoolBell tracking-widest h-14 w-80 md:w-1/3 hover:text-lg"
+			class="mx-auto btn text-primary-500 bg-primary-50 rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 			download="{catalogue.type}.pdf"
 			href={catalogue.path}>
 			<span class=" ext-primary font-extrabold">{catalogue.type}</span>
 		</a>
 		{/each}
 		<a
-			class="border-success-600 border-4 mx-auto btn text-success-500 bg-white rounded-xl text-sm font-schoolBell tracking-widest h-14 w-80 md:w-1/3 hover:text-lg"
+			class="border-success-600 border-4 mx-auto btn text-success-500 bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 			download="{bonDeCommande.type}.pdf"
 			href={bonDeCommande.path}>
 			Télécharger le {bonDeCommande.type}

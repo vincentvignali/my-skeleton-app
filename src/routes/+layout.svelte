@@ -1,5 +1,5 @@
 <script lang="ts">
-	import  PocketBase  from 'pocketbase';
+	import PocketBase from 'pocketbase';
 	// The ordering of these imports is critical to your app working properly
 	import '../theme.postcss';
 	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
@@ -10,11 +10,6 @@
 	import { IconArrowBack } from '@tabler/icons-svelte';
 	import { page } from '$app/stores';
 	$page;
-
 </script>
 
-
-<div class="h-screen p-2">
-
-	<slot><!-- optional fallback --></slot>
-</div>
+<slot><!-- optional fallback --></slot>
