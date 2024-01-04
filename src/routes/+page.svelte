@@ -31,7 +31,7 @@
 		class="relative border-warning-500 border-4 mx-auto btn text-warning-600 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 		href="{$page.url}dev/catalogue">
 		<div
-			class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 border-warning-500 border-dotted border-2 bg-warning-100 rounded-lg scale-75 outline-8 p-2">
+			class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 border-warning-500 border-dotted border-2 bg-warning-100 rounded-lg scale-75 outline-8 p-1">
 			Nouveau
 		</div>
 		Essayer notre catablogue en ligne
