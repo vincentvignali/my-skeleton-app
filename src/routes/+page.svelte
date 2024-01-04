@@ -29,7 +29,7 @@
 	</div>
 	{#each catalogues as catalogue}
 		<a
-			class="mx-auto btn text-primary-500 bg-primary-50 rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
+			class="mx-auto btn text-primary-500 bg-primary-50 rounded-xl text-sm font-schoolBell tracking-widest h-10 w-80 md:w-1/3 hover:text-lg"
 			download="{catalogue.type}.pdf"
 			href={catalogue.path}>
 			<span class=" ext-primary font-extrabold">{catalogue.type}</span>
@@ -37,7 +37,7 @@
 	{/each}
 	<p class="font-schoolBell text-md text-white text-center">Ou</p>
 	<a
-		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
+		class="border-warning-600 border-4 mx-auto btn text-warning-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 		href="{$page.url}dev/catalogue">
 		Voir le catablogue en Ligne
 	</a>
