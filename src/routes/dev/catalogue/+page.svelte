@@ -42,7 +42,6 @@
 	$: noFilterActive = Object.values(especeRecordList).every((espece) => espece === false);
 
 	$: filteredData = sourceData.filter((item) => {
-		console.log(item);
 		return Object.values(item).some((value) => {
 			if (noFilterActive) {
 				return value?.toString().toLowerCase().includes(searchValue.toLowerCase());

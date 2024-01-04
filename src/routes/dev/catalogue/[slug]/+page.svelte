@@ -1,24 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { IconCheck, IconPictureInPictureTop } from '@tabler/icons-svelte';
+	import { IconPictureInPictureTop } from '@tabler/icons-svelte';
 	export let data;
-	console.log(data);
-	console.log($page);
-	const url = $page.route.id;
-	const urlArray = url?.split('');
-	console.log(urlArray);
-	const backUrl = urlArray
-		?.map((char, i) => {
-			console.log(i);
-			console.log(char);
-			if (i > urlArray.length - 8) {
-				return;
-			}
-			return char;
-		})
-		.join('');
-	console.log(backUrl);
-	console.log($page.url.host);
 </script>
 
 <div class="container py-4 flex items-center flex-col">

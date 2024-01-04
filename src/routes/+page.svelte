@@ -38,13 +38,14 @@
 	<p class="font-schoolBell text-md text-white text-center">Ou</p>
 	<a
 		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
+		href="{$page.url}dev/catalogue">
+		Voir le catablogue en Ligne
+	</a>
+	<p class="font-schoolBell text-md text-white text-center">Puis</p>
+	<a
+		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 		download="{bonDeCommande.type}.pdf"
 		href={bonDeCommande.path}>
 		Télécharger le {bonDeCommande.type}
-	</a>
-	<a
-		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
-		href="{$page.url}dev/especes">
-		Voir le catablogue en Ligne {bonDeCommande.type}
 	</a>
 </div>
