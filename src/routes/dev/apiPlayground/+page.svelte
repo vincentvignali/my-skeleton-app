@@ -3,22 +3,13 @@
 
 	export let data;
 	let items = data.items;
-
-	onMount(() => {
-		console.log('Component mount');
-	});
-
-	onDestroy(() => {
-		console.log('Component unmount');
-	});
 </script>
 
 <div class="container mx-auto variant-ghost-tertiary p-2 rounded mt-2">
 	<h2 class="text-3xl text-primary-500 m-2 text-center">Api Test</h2>
 	<form action="?/create" method="post">
 		<button type="submit" class="my-2 mx-auto block btn variant-ghost-primary"
-			>Create a pocket record</button
-		>
+			>Create a pocket record</button>
 	</form>
 	<div class="flex justify-center items-center flex-wrap">
 		{#if items}

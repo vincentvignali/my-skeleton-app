@@ -1,6 +1,6 @@
 import type { Record } from 'pocketbase';
 
-export interface Tree {
+export interface Espece {
 	name: string;
 	href: string;
 	collectionId: string;
@@ -9,6 +9,7 @@ export interface Tree {
 		[key: string]: Record | Record[];
 	};
 	id: string;
+	picture: string;
 	created: string;
 	updated: string;
 }

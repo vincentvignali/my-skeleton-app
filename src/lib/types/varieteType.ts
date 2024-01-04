@@ -1,10 +1,11 @@
 import type { Record } from 'pocketbase';
+import type { Espece } from './especeType';
 
 export interface Variete {
 	id: string;
 	name: string;
 	expand: {
-		[key: string]: Record | Record[];
+		espece: Espece;
 	};
 	href: string;
 	collectionId: string;

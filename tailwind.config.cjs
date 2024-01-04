@@ -18,7 +18,8 @@ module.exports = {
 			}),
 			fontFamily: {
 				schoolBell: ['Schoolbell', 'sans-serif']
-			}
+			},
+			color: 'black'
 		}
 	},
 	plugins: [forms, typography, ...skeleton()]
