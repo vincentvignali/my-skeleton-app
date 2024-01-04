@@ -2,18 +2,13 @@
 	import { currentTextHelper } from '$lib/stores/textHelper';
 
 	export let buttonText: string;
-	export let textHelper: string;
 	export let buttonUrl: string;
-	export let icon: string;
 	$: svgClass = '';
 	$: innerAreaClass = 'fill-primary-500';
 	$: outterAreaClass = 'fill-white';
 	$: textClass = 'fill-white';
 
 	const applyBase = () => {
-		currentTextHelper.update((v) => {
-			return { ...v, active: false };
-		});
 		svgClass = 'scale-[1]';
 		outterAreaClass = 'fill-white';
 		innerAreaClass = 'fill-primary-500';
@@ -22,13 +17,6 @@
 		document.documentElement.children[1].setAttribute('style', '');
 	};
 	const applyReversed = () => {
-		currentTextHelper.update(() => {
-			return {
-				active: true,
-				content: textHelper,
-				icon
-			};
-		});
 		innerAreaClass = 'fill-white';
 		outterAreaClass = 'fill-primary-500';
 		svgClass = 'scale-[1.02]';
@@ -41,7 +29,8 @@
 	};
 </script>
 
-<a class="w-44 md:w-full"
+<a
+	class="w-44 md:w-full"
 	on:click={() => {
 		applyBase();
 	}}
@@ -60,7 +49,6 @@
 		viewBox="0 0 182.50000000000023 121.07142857142844"
 		width="100%"
 		height="auto">
-
 		<defs>
 			<style class="style-fonts">
 				@font-face {
