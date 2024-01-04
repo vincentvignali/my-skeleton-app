@@ -3,7 +3,7 @@
 	export let data;
 </script>
 
-<div class="container py-4 flex items-center flex-col">
+<div class="container py-4 flex items-center flex-col justify-center mx-auto">
 	<a href="/dev/catalogue" class="m-2"
 		><button class="variant-ghost-tertiary rounded-md self-center p-2 text-sm"
 			>Retour au catalogue</button
