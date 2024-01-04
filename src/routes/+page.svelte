@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	const bonDeCommande = { type: 'Bon de Commande', path: '/pdfs/-Bon-de-Commande.pdf' };
 
 	const catalogues = [
@@ -33,10 +35,16 @@
 			<span class=" ext-primary font-extrabold">{catalogue.type}</span>
 		</a>
 	{/each}
+	<p class="font-schoolBell text-md text-white text-center">Ou</p>
 	<a
 		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 		download="{bonDeCommande.type}.pdf"
 		href={bonDeCommande.path}>
 		Télécharger le {bonDeCommande.type}
+	</a>
+	<a
+		class="border-success-600 border-4 mx-auto btn text-success-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
+		href="{$page.url}dev/especes">
+		Voir le catablogue en Ligne {bonDeCommande.type}
 	</a>
 </div>
