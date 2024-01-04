@@ -39,7 +39,7 @@
 	<a
 		class="border-warning-600 border-4 mx-auto btn text-warning-700 font-black bg-white rounded-xl text-sm font-schoolBell tracking-widest h-12 w-80 md:w-1/3 hover:text-lg"
 		href="{$page.url}dev/catalogue">
-		Voir le catablogue en Ligne
+		Accéder au catablogue en ligne
 	</a>
 	<p class="font-schoolBell text-md text-white text-center">Puis</p>
 	<a
